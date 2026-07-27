@@ -1,0 +1,251 @@
+/* =====================================================================
+   Portfolio Builder System - Public Portfolio Theme Stylesheet
+   Five structurally distinct layout families, selected by the
+   theme-{key} body class set in views/shared/portfolio-render.jsp.
+   File: css/themes.css
+   ===================================================================== */
+
+.public-portfolio {
+    --accent: #C97B5C;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #2E2A24;
+    background-color: #FBF8F3;
+    min-height: 100vh;
+}
+
+.preview-banner {
+    background-color: #2E2A24;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.preview-banner a {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.pp-section {
+    padding: 3rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pp-section h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.pp-hero {
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.pp-hero-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid var(--accent);
+}
+
+.pp-headline {
+    font-size: 1.2rem;
+    color: #5C574C;
+}
+
+.pp-skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.pp-skill-chip {
+    background-color: rgba(0,0,0,0.06);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.pp-timeline-item {
+    border-left: 3px solid var(--accent);
+    padding-left: 1.2rem;
+    margin-bottom: 1.8rem;
+}
+
+.pp-timeline-meta { font-weight: 700; }
+.pp-timeline-dates { font-size: 0.85rem; color: #5C574C; }
+
+.pp-project-grid, .pp-service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.pp-project-card, .pp-service-card {
+    background-color: #fff;
+    border: 1px solid #E4DDCC;
+    border-radius: 14px;
+    padding: 1.2rem;
+}
+
+.pp-project-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.pp-project-links a {
+    margin-right: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.pp-social-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pp-social-row a {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* -----------------------------------------------------------------
+   Minimal Professional: single narrow column, generous whitespace,
+   left-aligned, no decorative bands.
+   ----------------------------------------------------------------- */
+.theme-minimal-professional .pp-section {
+    max-width: 680px;
+    text-align: left;
+    padding: 2.5rem 1.5rem;
+}
+.theme-minimal-professional .pp-hero {
+    text-align: left;
+    padding-top: 3rem;
+}
+.theme-minimal-professional .pp-hero-image {
+    border-radius: 12px;
+}
+
+/* -----------------------------------------------------------------
+   Editorial: full-width alternating bands, oversized serif headings,
+   asymmetric two-column sections where content allows.
+   ----------------------------------------------------------------- */
+.theme-editorial .pp-section {
+    max-width: none;
+    padding: 4rem 4vw;
+}
+.theme-editorial .pp-section:nth-of-type(even) {
+    background-color: #F1ECE2;
+}
+.theme-editorial h1 {
+    font-size: 3.4rem;
+}
+.theme-editorial .pp-project-grid {
+    grid-template-columns: 1fr;
+}
+.theme-editorial .pp-project-card {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* -----------------------------------------------------------------
+   Creative Visual: image-forward, large project tiles, masonry-style
+   grid, minimal text chrome.
+   ----------------------------------------------------------------- */
+.theme-creative-visual .pp-project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.theme-creative-visual .pp-project-card img {
+    height: 220px;
+    object-fit: cover;
+}
+.theme-creative-visual .pp-hero-image {
+    width: 180px;
+    height: 180px;
+}
+.theme-creative-visual h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 1.1rem;
+}
+
+/* -----------------------------------------------------------------
+   Developer: dark background, monospace accents, terminal-like
+   section headers.
+   ----------------------------------------------------------------- */
+.theme-developer {
+    background-color: #1B1F1C;
+    color: #E6E6E1;
+}
+.theme-developer .pp-project-card, .theme-developer .pp-service-card {
+    background-color: #262B27;
+    border-color: #3A413B;
+}
+.theme-developer h1, .theme-developer h2, .theme-developer h3 {
+    font-family: 'Courier New', monospace;
+    color: var(--accent);
+}
+.theme-developer .pp-section h2::before {
+    content: "// ";
+}
+.theme-developer .pp-timeline-dates, .theme-developer .pp-headline {
+    color: #A9AFA9;
+}
+
+/* -----------------------------------------------------------------
+   Corporate Professional: structured grid, boxed sections, formal
+   two-column info layout.
+   ----------------------------------------------------------------- */
+.theme-corporate-professional .pp-section {
+    border-bottom: 1px solid #DADFE6;
+    max-width: 960px;
+}
+.theme-corporate-professional .pp-hero {
+    background-color: #F3F5F8;
+    padding: 3rem 1.5rem;
+}
+.theme-corporate-professional .pp-skill-chip {
+    border-radius: 4px;
+    background-color: #EEF1F6;
+}
+.theme-corporate-professional .pp-project-card {
+    border-radius: 4px;
+}
+
+/* -----------------------------------------------------------------
+   Typography choices, apply independently of theme
+   ----------------------------------------------------------------- */
+.typography-storyline-serif h1, .typography-storyline-serif h2, .typography-storyline-serif h3 { font-family: 'Source Serif 4', serif; }
+.typography-modern-sans h1, .typography-modern-sans h2, .typography-modern-sans h3 { font-family: 'Nunito Sans', sans-serif; }
+.typography-editorial-mix h1, .typography-editorial-mix h2 { font-family: 'Source Serif 4', serif; }
+.typography-editorial-mix h3 { font-family: 'Nunito Sans', sans-serif; }
+.typography-developer-mono h1, .typography-developer-mono h2, .typography-developer-mono h3 { font-family: 'Courier New', monospace; }
+
+/* -----------------------------------------------------------------
+   Background and button style choices
+   ----------------------------------------------------------------- */
+.background-clean-white { background-color: #FFFFFF; }
+.background-soft-gray { background-color: #F3F2EF; }
+.background-dark { background-color: #1B1F1C; color: #E6E6E1; }
+
+.buttons-square .pp-project-card, .buttons-square .pp-skill-chip { border-radius: 2px; }
+.buttons-pill .pp-skill-chip { border-radius: 999px; }
+
+.layout-compact .pp-section { padding-top: 1.8rem; padding-bottom: 1.8rem; }
+.layout-spacious .pp-section { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+
+@media (max-width: 700px) {
+    .theme-editorial .pp-project-card { grid-template-columns: 1fr; }
+    .pp-hero h1 { font-size: 2.2rem; }
+}
